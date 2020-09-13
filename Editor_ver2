@@ -45,11 +45,11 @@ function myFunction() {
   
   
   // html tags with 3_2_1 letters h and p and div
-  tags_list_2_letters = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  tags_list_2_letters = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li'];
   // html tags with 3_2_1 letters h and p and div last char
-  tags_list_2_letters_end = ['1', '2', '3', '4', '5', '6'];
+  tags_list_2_letters_end = ['1', '2', '3', '4', '5', '6', 'l', 'i'];
   // html tags with 3_2_1 letters h and p and div last char first char
-  tags_list_2_letters_start = ['h'];
+  tags_list_2_letters_start = ['h', 'u', 'o', 'l'];
   tags_list_2_letters_converter_list = [];
   tags_list_2_letters_converter_close = [];
   tags_list_2_letters_converter_text = [];
@@ -110,10 +110,10 @@ function myFunction() {
                  tags_list_2_letters_converter_close = [];
                  for (var x=m; x < operation1.length; x++) {
 
-                 tags_list_2_letters_converter_close.push(operation1[x]);
+                 //tags_list_2_letters_converter_close.push(operation1[x]);
                    // if the array for closing reched out length 5 stop 
                    if (tags_list_2_letters_converter_close.length === 5) {
-                         break;
+                         //break;
                    }
                  
                   }
@@ -130,8 +130,13 @@ function myFunction() {
           } else {
              console.log("close for opening");
           }
+          
+          // the problem related to li here 
           storen = operation1[i];
+                
+          if (!(operation1[i] + operation1[i+1]) == "li") {
           operation1[i] = "<span class='codes'>&gt;</span>";
+          }
           break;
         } 
         
